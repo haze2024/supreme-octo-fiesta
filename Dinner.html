@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./yes_style.css">
+</head>
+<body>
+
+    <div class="container" id="initialPage">
+        <div>
+            <h1 class="header_text">Would you join me for a Dinner Date on the 29th Dec? </h1>
+        </div>
+        <div class="gif_container">
+            <img src="https://media.giphy.com/media/xT0xepgoflSpwGYJCo/giphy.gif" alt="Cute animated illustration">
+        </div>
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+        </div>
+    </div>
+
+    <div class="container" id="yesPage" style="display: none;">
+        <div>
+            <h1 class="header_text">Yaayyyyyyyy!!</h1>
+        </div>
+        <div class="gif_container">
+            <img src="https://media.giphy.com/media/1wlWtflbknYsTbvahh/giphy.gif" alt="Cute animated illustration">
+        </div>
+
+        <div class="additional-content">
+            </div>
+    </div>
+
+    <script>
+        function nextPage() {
+            document.getElementById("initialPage").style.display = "none";  // Hide the initial page
+            document.getElementById("yesPage").style.display = "block";  // Show the "yes" page
+        }
+
+        function moveButton() {
+            var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
+            var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+            document.getElementById('noButton').style.left = `${x}px`;
+            document.getElementById('noButton').style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
